@@ -1,6 +1,5 @@
-let cash = 35
-let price = 40
-let isStoreOpen = true
+const str = "Frontend Simplified"
 
-let str = cash >= price && isStoreOpen ? 'Print a Receipt' : 'Dont Print Receipt'
-console.log(str)
+for (let i = 0; i < 19; ++i) {
+  console.log(str[i])
+}
