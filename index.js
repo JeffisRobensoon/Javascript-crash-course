@@ -1,13 +1,72 @@
+const statusRef = document.querySelector("#status")
+
+function getSubscriptionStatus() {
+  return new Promise ((resolve, rejcct) => {
+    setTimeout(() => {
+      resolve(FREE);
+    }, 2000);
+  });
+}
+
+function getVideo(subscriptionStatus) {
+  return new Promise((resolve, reject) => {
+   if (subscriptionStatus === "VIP") {
+    resolve("show video")
+   }
+   else if (subscriptionStatus === "FREE") {
+    resolve("show trailer")
+   }
+
+   else {
+    reject("no video")
+   }
+  })
+}
+
+async function main() {
+const status = await getSubscriptionStatus
+statusRef.innerHTML = status
+console.log(await getVideo(status))
+}
+
+main();
+
+
+// console.log(fetch("https://jsonplaceholder.typicode.com/users/1"))
+//const emailRef = document.querySelector(".email");
+//console.log(emailRef)
+
+// 1. Then
+// fetch("https://jsonplaceholder.typicode.com/users/1").then((response) => {
+//   return response.json()
+// }).then(data => {
+//   console.log(data)
+//   emailRef.innerHTML = data.email
+//})
+
+// 2. Async/Await
+// async function main() {
+//   const response = await fetch("https://jsonplaceholder.typicode.com/users/1")
+//   const data = await response.json()
+//   console.log(data)
+//   emailRef.innerHTML = data.email
+// }
+
+// main();
+
+
+
+
 // First way of accessing an element
-document.querySelector("#title").innerHTML += "Frontend Simplified"
+//document.querySelector("#title").innerHTML += "Frontend Simplified"
 
 //Change CSS
 
 
-function changeTitleToRed() {
-  document.querySelector(".title").style.color = 'red'
-  console.log('clicked');
-} 
+//function changeTitleToRed() {
+  //document.querySelector(".title").style.color = 'red'
+  //console.log('clicked');
+//} 
 
 // second was of accessing an element
 
